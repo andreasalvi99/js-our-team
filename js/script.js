@@ -38,7 +38,7 @@ const teamMembers = [
   },
 ];
 
-// ** Recupero elementi HTMl
+// ** HTMl
 const inputImg = document.getElementById("img-member");
 const inputName = document.getElementById("name-member");
 const inputRole = document.getElementById("role-member");
@@ -64,13 +64,16 @@ function generateCard(member) {
 
 function printCard() {
   const memberCell = document.getElementById("members-row");
+  let cards = "";
 
   // ?? SVILUPPO
   for (const member of teamMembers) {
     const cardHtml = generateCard(member);
 
-    memberCell.innerHTML += cardHtml;
+    cards += cardHtml;
   }
+
+  memberCell.innerHTML = cards;
 }
 // ** FINE FUNZIONI
 
@@ -93,4 +96,6 @@ sendForm.addEventListener("submit", (e) => {
     img,
     email,
   });
+
+  printCard();
 });
