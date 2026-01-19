@@ -49,7 +49,7 @@ console.log(memberCell);
 
 for (const member of teamMembers) {
   const cardHtml = `<div class="col-md-6 col-lg-4 text-white gx-5">
-            <div class="d-flex justify-content-around bg-dark align-items-center">
+            <div class="d-flex justify-content-around bg-dark align-items-center rounded">
               <img src="./${member.img}" alt="" class="img-member object-fit-fill" />
               <div class="d-flex flex-column align-items-start">
                 <h3 class="fw-bold">${member.name}</h3>
