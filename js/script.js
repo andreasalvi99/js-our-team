@@ -1,4 +1,4 @@
-// ?? Obj
+// ** OBJ
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -38,16 +38,7 @@ const teamMembers = [
   },
 ];
 
-// ?? Recupero gli elementi dell'HTML
-
-const memberCell = document.getElementById("members-row");
-
-for (const member of teamMembers) {
-  const cardHtml = generateCard(member);
-
-  memberCell.innerHTML += cardHtml;
-}
-
+// !! FUNZIONI
 function generateCard(member) {
   const { name, role, email, img } = member;
 
@@ -63,3 +54,18 @@ function generateCard(member) {
           </div>`;
   return cardHtml;
 }
+
+function printCard() {
+  const memberCell = document.getElementById("members-row");
+
+  // ?? SVILUPPO
+  for (const member of teamMembers) {
+    const cardHtml = generateCard(member);
+
+    memberCell.innerHTML += cardHtml;
+  }
+}
+// !! FINE FUNZIONI
+
+// ?? SVILUPPO
+printCard();
