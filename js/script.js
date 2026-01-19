@@ -50,9 +50,9 @@ function generateCard(member) {
   const { name, role, email, img } = member;
 
   const cardHtml = `<div class="col-md-6 col-lg-4 text-white gx-5">
-            <div class="d-flex justify-content-around bg-dark align-items-center rounded">
+            <div class="d-flex justify-content-start bg-dark align-items-center rounded">
               <img src="./${img}" alt="" class="img-member object-fit-fill" />
-              <div class="d-flex flex-column align-items-start">
+              <div class="d-flex flex-column align-items-start mx-2">
                 <h3 class="fw-bold">${name}</h3>
                 <p>${role}</p>
                 <p class="text-info">${email}</p>
