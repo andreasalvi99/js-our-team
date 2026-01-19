@@ -41,13 +41,14 @@ const teamMembers = [
 // ?? Recupero gli elementi dell'HTML
 
 const memberCell = document.getElementById("members-row");
-const profilePic = document.querySelector(".img-member");
-const memberName = document.getElementById("member-name");
-const memberRole = document.getElementById("member-role");
-const memberEmail = document.getElementById("member-email");
-console.log(memberCell);
 
 for (const member of teamMembers) {
+  const cardHtml = generateCard(member);
+
+  memberCell.innerHTML += cardHtml;
+}
+
+function generateCard(member) {
   const cardHtml = `<div class="col-md-6 col-lg-4 text-white gx-5">
             <div class="d-flex justify-content-around bg-dark align-items-center rounded">
               <img src="./${member.img}" alt="" class="img-member object-fit-fill" />
@@ -58,6 +59,5 @@ for (const member of teamMembers) {
               </div>
             </div>
           </div>`;
-
-  memberCell.innerHTML += cardHtml;
+  return cardHtml;
 }
