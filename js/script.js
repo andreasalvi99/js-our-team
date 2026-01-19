@@ -38,7 +38,14 @@ const teamMembers = [
   },
 ];
 
-// !! FUNZIONI
+// ** Recupero elementi HTMl
+const inputImg = document.getElementById("img-member");
+const inputName = document.getElementById("name-member");
+const inputRole = document.getElementById("role-member");
+const inputEmail = document.getElementById("email-member");
+const sendForm = document.getElementById("add-member");
+
+// ** FUNZIONI
 function generateCard(member) {
   const { name, role, email, img } = member;
 
@@ -65,7 +72,25 @@ function printCard() {
     memberCell.innerHTML += cardHtml;
   }
 }
-// !! FINE FUNZIONI
+// ** FINE FUNZIONI
 
 // ?? SVILUPPO
 printCard();
+
+// ** EVENTI
+
+sendForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = inputName.value;
+  const role = inputRole.value;
+  const img = inputImg.value;
+  const email = inputEmail.value;
+
+  teamMembers.push({
+    name,
+    role,
+    img,
+    email,
+  });
+});
