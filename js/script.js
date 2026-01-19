@@ -49,13 +49,15 @@ for (const member of teamMembers) {
 }
 
 function generateCard(member) {
+  const { name, role, email, img } = member;
+
   const cardHtml = `<div class="col-md-6 col-lg-4 text-white gx-5">
             <div class="d-flex justify-content-around bg-dark align-items-center rounded">
-              <img src="./${member.img}" alt="" class="img-member object-fit-fill" />
+              <img src="./${img}" alt="" class="img-member object-fit-fill" />
               <div class="d-flex flex-column align-items-start">
-                <h3 class="fw-bold">${member.name}</h3>
-                <p>${member.role}</p>
-                <p class="text-info">${member.email}</p>
+                <h3 class="fw-bold">${name}</h3>
+                <p>${role}</p>
+                <p class="text-info">${email}</p>
               </div>
             </div>
           </div>`;
